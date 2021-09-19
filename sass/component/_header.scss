@@ -11,9 +11,8 @@
 }
 
 .header-contacts {
-    display: flex;
+    @include flex;
     margin-left: auto;
-    align-items: center;
 }
 
 .header-nav {
@@ -24,17 +23,6 @@
 .header-nav__item:not(:last-child) {
     margin-right: 50px;
 
-}
-
-.header-nav__link:hover,
-.header-nav__link:focus {
-    color: var(--accent-color);
-}
-
-.header-contacts__link:hover,
-.header-contacts__link:focus {
-    color: var(--accent-color);
-    fill: var(--accent-color);
 }
 
 .logo__text {
@@ -52,8 +40,8 @@
     color: #2196f3;
 }
 
-.header-nav__link,
-.header-contacts__link {
+.header-nav__link {
+    position: relative;
     display: block;
     padding: 32px 0;
 
@@ -64,17 +52,25 @@
     color: var(--title-text-color);
 
     transition: color var(--animate-time) var(--animate-function);
+
+    &:hover,
+    &:focus {
+    color: var(--accent-color);
+}
 }
 
 .header-contacts__link {
+    @extend .header-nav__link;
     display: flex;
     align-items: center;
 
     color: var(--main-text-color);
-}
 
-.header-nav__link {
-    position: relative;
+    &:hover,
+    &:focus {
+    color: var(--accent-color);
+    fill: var(--accent-color);
+}
 }
 
 .active {

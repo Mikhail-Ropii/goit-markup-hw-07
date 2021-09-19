@@ -1,13 +1,11 @@
 .footer {
     padding: 60px 0;
+
+    background-color: #2F303A;
 }
 
 .footer-content {
     display: flex;
-}
-
-.footer {
-    background-color: #2F303A;
 }
 
 .footer-logo {
@@ -21,12 +19,12 @@
     color: #ffffff;
 }
 
-.footer-item:not(:last-child) {
+.footer-list__item:not(:last-child) {
     margin-bottom: 9px;
 }
 
 .adress,
-.footer-link {
+.footer-list__link {
     display: block;
 
     font-size: 14px;
@@ -41,22 +39,23 @@
     color: #ffffff;
 }
 
-.footer-link {
+.footer-list__link {
     color: rgba(255, 255, 255, 0.6);
 
-}
+    transition: color var(--animate-time) var(--animate-function);
 
-.footer-link:hover,
-.footer-link:focus {
+    &:hover,
+    &:focus {
     color: var(--accent-color);
+}
 }
 
 .footer-contacts {
     margin-right: 70px;
 }
 
-.send-title,
-.join-title {
+.send__title,
+.join-social__title {
     font-weight: 700;
     font-size: 14px;
     line-height: 1.14;
@@ -68,18 +67,16 @@
     color: #FFFFFF;
 }
 
-.join-social-list {
+.join-social__list {
     display: flex;
 }
 
-.join-social-item:not(:last-child) {
+.join-social__item:not(:last-child) {
     margin-right: 10px;
 }
 
-.join-social-link {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.join-social__link {
+    @include flex;
     width: 44px;
     height: 44px;
 
@@ -87,15 +84,15 @@
     border-radius: 50%;
 
     transition: background-color var(--animate-time) var(--animate-function);
-}
 
-.join-social-icon {
-    fill: #ffffff;
-}
-
-.join-social-link:hover,
-.join-social-link:focus {
+    &:hover,
+    &:focus {
     background-color: var(--accent-color);
+}
+}
+
+.join-social__icon {
+    fill: #ffffff;
 }
 
 .send {
@@ -108,7 +105,7 @@
 
 }
 
-.send-input {
+.send-form__input {
     min-width: 358px;
     height: 50px;
     padding-left: 16px;
@@ -117,14 +114,14 @@
     color: #ffffff;
     background-color: #2F303A;
     border: 1px solid rgba(255, 255, 255, 0.3);
-}
 
-.send-input::placeholder {
+    &::placeholder {
     font-size: 16px;
     line-height: 1.25;
     letter-spacing: 0.03em;
 
     color: rgba(255, 255, 255, 0.6);
+}
 }
 
 .send-btn {
@@ -146,6 +143,6 @@
     justify-content: center;
 }
 
-.send-icon {
+.send-btn__icon {
     margin-left: 10px;
 }

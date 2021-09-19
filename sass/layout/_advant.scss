@@ -1,7 +1,5 @@
 .features__icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include flex;
 
     width: 270px;
     height: 120px;

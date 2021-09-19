@@ -44,15 +44,13 @@
 }
 
 .team-social {
-    display: flex;
-    justify-content: center;
+    @include flex;
     margin-bottom: 30px;
 }
 
 .team-social__link {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flex;
+
     width: 44px;
     height: 44px;
     background-color: #ffffff;
@@ -75,8 +73,8 @@
 
     transition: fill var(--animate-time) var(--animate-function);
 
-    .team-social-link:hover &,
-    .team-social-link:focus & {
+    .team-social__link:hover &,
+    .team-social__link:focus & {
     fill: #ffffff;
 }
 }

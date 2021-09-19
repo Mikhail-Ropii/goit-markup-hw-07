@@ -3,7 +3,7 @@
 }
 
 
-.form-field {
+.form__field {
     display: block;
     margin-bottom: 10px;
 }
@@ -11,9 +11,11 @@
 .form-field-comment {
     display: block;
     margin-bottom: 20px;
+
+    
 }
 
-.form-label {
+.form__label {
     display: block;
     margin-bottom: 4px;
 
@@ -24,7 +26,7 @@
     color: var(--main-text-color);
 }
 
-.form-input {
+.form__input {
     width: 100%;
     height: 40px;
     padding-left: 42px;
@@ -33,29 +35,36 @@
     border-radius: 4px;
 
     transition: border var(--animate-time) var(--animate-function);
+
+    &::placeholder {
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.01em;
+
+    color: rgba(117, 117, 117, 0.5);
 }
 
-.modal-comment:focus,
-.form-input:focus {
+    &:focus {
     outline: transparent;
     border: 1px solid var(--accent-color);
 }
-
-.form-input:focus+.input-icon {
-    fill: var(--accent-color);
 }
 
-.form-wrap {
+.form__wrap {
     position: relative;
 }
 
-.input-icon {
+.form__input-icon {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     left: 14px;
 
     transition: fill var(--animate-time) var(--animate-function);
+
+    .form__input:focus+& {
+    fill: var(--accent-color);
+}
 }
 
 .modal-comment {
@@ -69,9 +78,8 @@
     border-radius: 4px;
 
     transition: border var(--animate-time) var(--animate-function);
-}
 
-.form-input::placeholder {
+    &::placeholder {
     font-size: 14px;
     line-height: 1.14;
     letter-spacing: 0.01em;
@@ -79,22 +87,21 @@
     color: rgba(117, 117, 117, 0.5);
 }
 
-.modal-comment::placeholder {
-    font-size: 14px;
-    line-height: 1.14;
-    letter-spacing: 0.01em;
-
-    color: rgba(117, 117, 117, 0.5);
+    &:focus {
+    outline: transparent;
+    border: 1px solid var(--accent-color);
+}
 }
 
-.checkbox-item {
+.checkbox {
     display: flex;
-    margin-bottom: 30px;
     align-items: center;
     justify-content: center;
+
+    margin-bottom: 30px;
 }
 
-.check-icon {
+.checkbox__icon {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -107,14 +114,14 @@
 
     transition: background-color var(--animate-time) var(--animate-function),
         border var(--animate-time) var(--animate-function);
-}
 
-.checkbox:checked+.check-icon {
+    .checkbox__input:checked+& {
     background-color: var(--accent-color);
     border: none;
 }
+}
 
-.check-text {
+.checkbox__text {
     font-size: 14px;
     line-height: 1.71;
     letter-spacing: 0.03em;
@@ -146,9 +153,9 @@
     border-radius: 4px;
 
     transition: background-color var(--animate-time) var(--animate-function);
-}
 
-.submit-btn:hover,
-.submit-btn:focus {
+    &:hover,
+    &:focus {
     background-color: #188CE8;
+}
 }

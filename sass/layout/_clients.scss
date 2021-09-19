@@ -1,11 +1,9 @@
-.clients-list {
+.clients {
     display: flex;
 }
 
-.clients-link {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.clients__link {
+    @include flex;
 
     width: 170px;
     height: 92px;
@@ -13,21 +11,25 @@
     border-radius: 4px;
 
     transition: border-color var(--animate-time) var(--animate-function);
+
+    &:hover,
+    &:focus {
+    border-color: var(--accent-color);
+}
 }
 
-.clients-item:not(:last-child) {
+.clients__item:not(:last-child) {
     margin-right: 30px;
 }
 
-.clients-icon {
+.clients__icon {
     fill: var(--icon-color);
     transition: fill var(--animate-time) var(--animate-function);
+
+    .clients__link:hover &,
+    .clients__link:focus & {
+    fill: var(--accent-color);
+    }
 }
 
-.clients-link:hover .clients-icon,
-.clients-link:focus .clients-icon,
-.clients-link:hover,
-.clients-link:focus {
-    border-color: var(--accent-color);
-    fill: var(--accent-color);
-}
+
